@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EEUN COMMAND // Extradigital Forensic Suite — Exun 2026</title>
+    <meta name="description" content="EEUN Command Center — Extradigital Forensic Investigation Dashboard for Exun 2026.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        chakra: ['"Chakra Petch"', 'sans-serif'],
+                        manrope: ['"Manrope"', 'sans-serif'],
+                        mono: ['"Fira Code"', 'monospace'],
+                        arcade: ['"VT323"', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body class="font-manrope antialiased">
+
+    <div id="aurora-bg"></div>
+    <div id="dot-grid"></div>
+    <div id="floorGrid"></div>
+    <div id="stars"><div class="sl sl1"></div><div class="sl sl2"></div></div>
+    <canvas id="particleCanvas"></canvas>
+    <div class="scanlines"></div>
+    <div id="root" class="relative z-10"></div>
+
+    <script src="js/background.js"></script>
+    <script src="js/core/globals.js"></script>
+    <script src="js/core/audio.js"></script>
+    <script src="js/data/energy-telemetry.js"></script>
+    <script src="js/data/incident-timeline.js"></script>
+    <script src="js/data/hotspots.js"></script>
+    <script src="js/data/source-code.js"></script>
+    <script src="js/data/vault-docs.js"></script>
+    <script type="text/babel" src="js/components/icons.jsx"></script>
+    <script type="text/babel" src="js/components/shared.jsx"></script>
+    <script type="text/babel" src="js/components/header.jsx"></script>
+    <script type="text/babel" src="js/components/telemetry-chart.jsx"></script>
+    <script type="text/babel" src="js/components/incident-timeline.jsx"></script>
+    <script type="text/babel" src="js/components/code-diff.jsx"></script>
+    <script type="text/babel" src="js/components/asset-map.jsx"></script>
+    <script type="text/babel" src="js/components/game-sim.jsx"></script>
+    <script type="text/babel" src="js/components/dossier.jsx"></script>
+    <script type="text/babel" src="js/components/vault.jsx"></script>
+    <script type="text/babel" src="js/components/modal.jsx"></script>
+    <script type="text/babel" src="js/app.jsx"></script>
+</body>
+</html>

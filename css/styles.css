@@ -1,0 +1,67 @@
+*,*::before,*::after{box-sizing:border-box}
+body{background:#030508;color:#c8d0e0;margin:0;overflow-x:hidden;font-family:'Manrope',sans-serif}
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:#030508}
+::-webkit-scrollbar-thumb{background:rgba(0,245,255,.2);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:#00F5FF}
+#aurora-bg{position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse 80% 60% at 20% 10%,rgba(0,60,130,.3) 0%,transparent 60%),radial-gradient(ellipse 70% 50% at 80% 90%,rgba(80,0,180,.2) 0%,transparent 55%),#030508;pointer-events:none;z-index:0}
+#dot-grid{position:fixed;top:0;left:0;width:100%;height:100%;background-image:radial-gradient(circle,rgba(0,245,255,.07) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;z-index:1}
+.scanlines{position:fixed;top:0;left:0;width:100vw;height:100vh;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.15) 2px,rgba(0,0,0,.15) 4px);pointer-events:none;z-index:9998;opacity:.4}
+#particleCanvas{position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2;opacity:.6}
+.glass{background:rgba(8,10,20,.78);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(0,245,255,.14);box-shadow:0 0 0 1px rgba(0,245,255,.04),0 8px 40px rgba(0,0,0,.6),inset 0 1px 0 rgba(0,245,255,.07);transition:border-color .3s,box-shadow .3s}
+.glass:hover{border-color:rgba(0,245,255,.28);box-shadow:0 0 0 1px rgba(0,245,255,.08),0 0 35px rgba(0,245,255,.07),0 12px 50px rgba(0,0,0,.7),inset 0 1px 0 rgba(0,245,255,.1)}
+.glass-red{background:rgba(8,4,7,.82);backdrop-filter:blur(16px);border:1px solid rgba(255,0,60,.18);box-shadow:0 0 0 1px rgba(255,0,60,.04),0 8px 40px rgba(0,0,0,.7)}
+.ncyan{text-shadow:0 0 10px rgba(0,245,255,.8),0 0 25px rgba(0,245,255,.4),0 0 50px rgba(0,245,255,.15)}
+.nred{text-shadow:0 0 10px rgba(255,0,60,.9),0 0 25px rgba(255,0,60,.5)}
+.bncyan{box-shadow:0 0 25px rgba(0,245,255,.25),inset 0 0 12px rgba(0,245,255,.05)}
+.crt-screen{box-shadow:inset 0 0 40px rgba(0,245,255,.1),inset 0 0 8px rgba(0,0,0,.95),0 0 20px rgba(0,245,255,.12);border-radius:12px}
+.crt-screen-red{box-shadow:inset 0 0 30px rgba(255,0,60,.08),inset 0 0 6px rgba(0,0,0,.95),0 0 15px rgba(255,0,60,.2);border-radius:12px}
+.glitch:hover{animation:glitch .18s linear infinite}
+@keyframes glitch{0%{transform:translate(0)}25%{transform:translate(-2px,1px) skewX(-1deg)}50%{transform:translate(2px,-1px)}75%{transform:translate(-1px,2px)}100%{transform:translate(0)}}
+@keyframes scan6{0%{transform:translateY(-100%)}100%{transform:translateY(300%)}}
+@keyframes sweep{0%{top:0%}50%{top:100%}100%{top:0%}}
+@keyframes enterUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes ping2{0%{transform:scale(1);opacity:.8}75%,100%{transform:scale(2);opacity:0}}
+.anim-scan{animation:scan6 5s linear infinite}
+.anim-sweep{animation:sweep 2.8s ease-in-out infinite}
+.anim-ping{animation:ping2 1.8s ease-in-out infinite}
+.anim-enter{animation:enterUp .5s cubic-bezier(.22,1,.36,1) both}
+.d1{animation-delay:.1s}.d2{animation-delay:.2s}.d3{animation-delay:.3s}.d4{animation-delay:.35s}
+input[type=range]{accent-color:#00F5FF;cursor:pointer}
+#aurora-bg{animation:auroraShift 26s ease-in-out infinite}
+@keyframes auroraShift{0%{filter:hue-rotate(0deg) brightness(1)}50%{filter:hue-rotate(26deg) brightness(1.12)}100%{filter:hue-rotate(-10deg) brightness(1)}}
+#floorGrid{position:fixed;left:-25%;bottom:-2px;width:150%;height:38vh;z-index:1;pointer-events:none;opacity:.15;background-image:linear-gradient(rgba(0,245,255,.35) 1px,transparent 1px),linear-gradient(90deg,rgba(0,245,255,.35) 1px,transparent 1px);background-size:46px 46px;transform:perspective(480px) rotateX(62deg);transform-origin:center top;animation:gridMove 3s linear infinite;-webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,.9),transparent 90%);mask-image:linear-gradient(to bottom,rgba(0,0,0,.9),transparent 90%)}
+@keyframes gridMove{from{background-position:0 0}to{background-position:0 -46px}}
+#stars{position:fixed;inset:0;z-index:1;pointer-events:none}
+#stars .sl{position:absolute;inset:0}
+#stars .sl1{background-image:radial-gradient(circle,rgba(255,255,255,.8) .6px,transparent 1.3px),radial-gradient(circle,rgba(0,245,255,.55) .5px,transparent 1.1px);background-size:340px 340px,210px 210px;animation:starDrift 150s linear infinite,twinkle 5s ease-in-out infinite}
+#stars .sl2{background-image:radial-gradient(circle,rgba(180,79,255,.55) .7px,transparent 1.4px),radial-gradient(circle,rgba(255,255,255,.7) .45px,transparent 1px);background-size:264px 264px,132px 132px;animation:starDrift 95s linear infinite reverse,twinkle 3.4s ease-in-out infinite}
+@keyframes starDrift{from{background-position:0 0,0 0}to{background-position:0 340px,0 210px}}
+@keyframes twinkle{0%,100%{opacity:.5}50%{opacity:1}}
+.modal-shell{position:relative;border-radius:22px;padding:1px;background:linear-gradient(135deg,rgba(0,245,255,.65),rgba(0,245,255,.06) 30%,rgba(180,79,255,.55) 62%,rgba(255,0,60,.55) 100%);box-shadow:0 0 80px rgba(0,245,255,.16),0 0 120px rgba(180,79,255,.1),0 40px 140px rgba(0,0,0,.9),inset 0 0 18px rgba(0,245,255,.05)}
+.modal-shell::after{content:'';position:absolute;inset:0;border-radius:22px;background:linear-gradient(115deg,transparent 38%,rgba(255,255,255,.09) 50%,transparent 60%);background-size:260% 100%;pointer-events:none;z-index:3;animation:sheen 3.6s ease-in-out infinite}
+@keyframes sheen{0%{background-position:120% 0}60%,100%{background-position:-120% 0}}
+@keyframes modalIn{from{opacity:0;transform:translateY(26px) scale(.94)}to{opacity:1;transform:translateY(0) scale(1)}}
+.crt-veil{background:radial-gradient(ellipse at center,transparent 52%,rgba(0,0,0,.5) 100%)}
+.phosphor{background:radial-gradient(ellipse at 50% 35%,rgba(0,245,255,.09),rgba(0,245,255,.02) 60%,transparent 75%);animation:phosphor 2.4s ease-in-out infinite}
+@keyframes phosphor{0%,100%{opacity:.45}50%{opacity:1}}
+@keyframes flicker{0%,88%,92%,96%,100%{opacity:1}90%{opacity:.82}94%{opacity:.92}}
+.crt-flick{animation:flicker 7s linear infinite}
+.glass,.glass-red{will-change:transform}
+.glass{position:relative}
+.glass::after{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .4s;background:radial-gradient(420px circle at 50% 0%,rgba(0,245,255,.06),transparent 45%)}
+.glass:hover::after{opacity:1}
+.anim-float{animation:float 5s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.d5{animation-delay:.45s}.d6{animation-delay:.55s}
+
+/* ── Suspension Vault: document paper, stamps, typewriter ── */
+.paper{position:relative;overflow:hidden}
+.paper::before{content:'';position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(255,255,255,.012) 3px,rgba(255,255,255,.012) 4px);border-radius:inherit}
+.paper::after{content:'';position:absolute;top:-60%;left:-30%;width:30%;height:220%;pointer-events:none;transform:rotate(18deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.03),transparent);animation:paperSheen 9s ease-in-out infinite}
+@keyframes paperSheen{0%,55%,100%{left:-30%}30%{left:110%}}
+@keyframes stampIn{0%{opacity:0;transform:scale(2.1) rotate(-25deg)}60%{opacity:1;transform:scale(.94) rotate(-7deg)}100%{opacity:.92;transform:scale(1) rotate(-9deg)}}
+.tw-caret{filter:drop-shadow(0 0 5px rgba(0,255,136,.7))}
+.pulse-slow{animation:pulseSlow 2.6s ease-in-out infinite}
+@keyframes pulseSlow{0%,100%{opacity:.55}50%{opacity:1}}
+

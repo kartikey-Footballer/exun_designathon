@@ -1,0 +1,13 @@
+{
+  "name": "eeun-command-forensic-suite",
+  "version": "1.0.0",
+  "private": true,
+  "description": "EEUN Command // Extradigital Forensic Suite - build-free React forensic dashboard for Exun 2026",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "start:win": "python -m http.server 8000",
+    "serve": "npx --yes serve ."
+  },
+  "keywords": ["react", "dashboard", "forensics", "exun2026"],
+  "license": "UNLICENSED"
+}

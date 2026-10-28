@@ -1,0 +1,17 @@
+const ED=[
+  {i:0,date:'Oct 13',kwh:24.6,thd:2.1,comp:'12%',st:'Normal'},
+  {i:1,date:'Oct 14',kwh:28.1,thd:2.4,comp:'14%',st:'Normal'},
+  {i:2,date:'Oct 15',kwh:22.9,thd:1.9,comp:'11%',st:'Normal'},
+  {i:3,date:'Oct 16',kwh:31.4,thd:2.8,comp:'16%',st:'Normal'},
+  {i:4,date:'Oct 17',kwh:26.7,thd:2.2,comp:'13%',st:'Normal'},
+  {i:5,date:'Oct 18',kwh:35.2,thd:3.1,comp:'18%',st:'Normal'},
+  {i:6,date:'Oct 19',kwh:29.8,thd:2.5,comp:'15%',st:'Normal'},
+  {i:7,date:'Oct 20',kwh:23.5,thd:2.0,comp:'12%',st:'Normal'},
+  {i:8,date:'Oct 21',kwh:27.6,thd:2.3,comp:'14%',st:'Normal'},
+  {i:9,date:'Oct 22',kwh:25.1,thd:2.1,comp:'13%',st:'Normal'},
+  {i:10,date:'Oct 23',kwh:2684.0,thd:94.2,comp:'100% (Thermal Overload)',st:'CRITICAL OVERLOAD',isA:true,notes:'Compressor-controller startup spike & harmonic resonance (12.4 kHz) at 22:31 UTC.'},
+  {i:11,date:'Oct 24',kwh:503.2,thd:46.8,comp:'62% (Oscillating)',st:'Post-Spike Residual',isD:true,notes:'HVAC controller oscillation & elevated harmonic content.'},
+  {i:12,date:'Oct 25',kwh:21.8,thd:2.8,comp:'10%',st:'Normal'},
+  {i:13,date:'Oct 26',kwh:28.9,thd:2.4,comp:'14%',st:'Normal'},
+  {i:14,date:'Oct 27',kwh:12.4,thd:1.1,comp:'0% (Seized)',st:'MONITORING SUSPENDED',isX:true,notes:'Directive EIA/EXUN/SUS-01 in effect — EXUN telemetry hardware seized by EIA. Feed terminated.'},
+];

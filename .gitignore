@@ -1,0 +1,34 @@
+# macOS junk
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*~
+
+# Node (only used if you run `npx serve` / npm scripts)
+node_modules/
+package-lock.json
+npm-debug.log*
+yarn-error.log*
+
+# Python cache (only used if you run the http.server via python)
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Temporary / local config
+.env
+.env.*
+*.local
+scratchpad_*.md
+*.log
